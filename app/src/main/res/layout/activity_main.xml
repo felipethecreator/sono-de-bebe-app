@@ -5,40 +5,49 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FDF7FF"
     tools:context=".MainActivity">
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/white"
-        android:gravity="center"
+        android:gravity="center|end"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:contentDescription="@string/img_bebe_dormindo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/moon_icon" />
-
         <TextView
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
             android:fontFamily="@font/poppins"
-            android:includeFontPadding="false"
-            android:lineHeight="30sp"
             android:text="Sono de bebê"
-            android:textColor="#6D28D9"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textColor="#7C4DFF"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toEndOf="@id/moonIcon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.692" />
 
+        <ImageView
+            android:id="@+id/moonIcon"
+            android:layout_width="34dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="120dp"
+            android:contentDescription="@string/img_bebe_dormindo"
+            android:src="@drawable/moon_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.6" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:id="@+id/motherBabyImage"
@@ -56,37 +65,53 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins"
-        android:text="💤Monitore o sono e a alimentação do seu bebê"
-        android:textColor="#6D28D9"
+        android:shadowColor="#55000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
+        android:text="Monitore o sono e a alimentação"
+        android:textColor="#7C4DFF"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/motherBabyImage" />
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/introDescription"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/child_face" />
+
+    <TextView
         android:id="@+id/introDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="413dp"
+        android:layout_height="79dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/poppins"
         android:gravity="center"
         android:lineSpacingExtra="4sp"
+        android:shadowColor="#55000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="2"
         android:text="Acompanhe os horários em que seu bebê dorme, acorda e se alimenta. Registre tudo com facilidade e visualize relatórios para entender a rotina dele."
         android:textColor="#7E45D7"
-
         android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@+id/introTitle"
-        tools:layout_editor_absoluteX="0dp" />
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/introTitle" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         android:layout_width="146dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:backgroundTint="#6D28D9"
+        android:backgroundTint="#673AB7"
         android:text="Começar agora"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -98,12 +123,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:gravity="center"
-        android:background="@drawable/bg_card"
+        android:background="#FDFBFF"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin">
 
         <LinearLayout
             android:id="@+id/cardsContainer"
@@ -117,24 +142,25 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <!-- CARD DE SONO -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@drawable/bg_card_white"
-                android:padding="12dp"
                 android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_card_white"
                 android:elevation="2dp"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="12dp">
 
                 <ImageView
-                    android:contentDescription="@string/despertador"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/alarm_clock"
-                    android:background="@drawable/bg_circle_icon"
+                    android:layout_marginEnd="12dp"
+                    android:background="@drawable/bg_card_white"
+                    android:contentDescription="@string/despertador"
                     android:padding="8dp"
-                    android:layout_marginEnd="12dp" />
+                    android:src="@drawable/alarm_clock" />
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -146,16 +172,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Registro de Sono"
-                        android:textColor="#6D28D9"
-                        android:textStyle="bold"
-                        android:textSize="15sp" />
+                        android:textColor="#7C4DFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:shadowColor="#55000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"
                         android:text="Marque quando seu bebê dorme e acorda, acompanhando padrões de sono."
                         android:textColor="#7E45D7"
-                        android:fontFamily="@font/poppins"
                         android:textSize="13sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -174,7 +204,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/feeding_bottle"
-                    android:background="@drawable/bg_circle_icon"
+                    android:background="@drawable/bg_card_white"
                     android:padding="8dp"
                     android:layout_marginEnd="12dp" />
 
@@ -188,7 +218,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Registro de Alimentação"
-                        android:textColor="#6D28D9"
+                        android:textColor="#7C4DFF"
                         android:textStyle="bold"
                         android:textSize="15sp" />
 
@@ -198,7 +228,11 @@
                         android:text="Anote horários de mamadas e refeições para acompanhar a nutrição."
                         android:textColor="#7E45D7"
                         android:fontFamily="@font/poppins"
-                        android:textSize="13sp" />
+                        android:textSize="13sp"
+                        android:shadowColor="#55000000"
+                        android:shadowDx="1"
+                        android:shadowDy="1"
+                        android:shadowRadius="2"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
@@ -213,7 +247,7 @@
         android:gravity="center"
         android:paddingTop="12dp"
         android:text="Recursos para acompanhar seu bebê"
-        android:textColor="#6D28D9"
+        android:textColor="#7C4DFF"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="@+id/linearLayout2" />
