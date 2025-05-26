@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "597978440226",
+    "project_id": "sono-de-bebe",
+    "storage_bucket": "sono-de-bebe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597978440226:android:dffa2032ba90657f45607b",
+        "android_client_info": {
+          "package_name": "com.example.sono_de_bebe_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3uRl2R6637bn2Hjj2c98GqcpDSAhqaH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
