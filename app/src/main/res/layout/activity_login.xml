@@ -17,11 +17,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/bg_launcher_mother_baby" />
 
-    <ImageView
-        android:id="@+id/imageView3"
+    <ImageButton
+        android:id="@+id/arrowBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toStartOf="parent"
