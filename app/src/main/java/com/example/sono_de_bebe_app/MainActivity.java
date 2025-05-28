@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnLogin = findViewById(R.id.btnLogin);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
+            @Override //USAR INTENT PRA CARREGAR O LOGIN
             public void onClick(View v) {
                 setContentView(R.layout.activity_login);
             }

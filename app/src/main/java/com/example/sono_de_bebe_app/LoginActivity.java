@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +18,21 @@ public class LoginActivity extends AppCompatActivity {
 //
 //    private GoogleSignInClient googleSignInClient;
 //    private FirebaseAuth firebaseAuth;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_login);
-//
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        TextView registerPrompt = findViewById(R.id.registerPrompt);
+
+        registerPrompt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_register);
+            }
+        });
+
 //        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
 //                .requestIdToken(getString(R.string.default_web_client_id))
 //                .requestEmail()
@@ -38,5 +48,5 @@ public class LoginActivity extends AppCompatActivity {
 //                setContentView(R.layout.activity_main);
 //            }
 //        });
-//    }
+    }
 }
